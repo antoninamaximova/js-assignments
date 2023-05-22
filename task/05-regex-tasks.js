@@ -31,7 +31,11 @@
  * @return {RegExp}
  */
 function getRegexForGuid() {
-   throw new Error('Not implemented');
+    let str = '3F2504E0-4F89-41D3-9A0C-0305E82C3301';
+    let regex = new RegExp(/^[0-9A-Fa-f]{8}(?:-[0-9A-Fa-f]{4}){3}-[0-9A-Fa-f]{12}$/i);
+    if (str.match(regex)) return "Match";
+    if (str.match(regex) == null) return "Do not match";
+    throw new Error('Not implemented');
 }
 
 
@@ -53,7 +57,7 @@ function getRegexForGuid() {
  *
  */
 function getRegexForPitSpot() {
-   throw new Error('Not implemented');
+    throw new Error('Not implemented');
 }
 
 
@@ -72,7 +76,7 @@ function getRegexForPitSpot() {
  * @return {RegExp}
  */
 function getRegexForIPv4() {
-   throw new Error('Not implemented');
+    throw new Error('Not implemented');
 }
 
 
@@ -91,7 +95,7 @@ function getRegexForIPv4() {
  * @return {RegExp}
  */
 function getRegexForSSN() {
-   throw new Error('Not implemented');
+    throw new Error('Not implemented');
 }
 
 
@@ -116,7 +120,7 @@ function getRegexForSSN() {
  *   'Pa55'.match(validator) => false
  */
 function getPasswordValidator(minLength) {
-   throw new Error('Not implemented');
+    throw new Error('Not implemented');
 }
 
 
