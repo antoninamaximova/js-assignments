@@ -56,6 +56,7 @@ function getCicleCircumference(radius) {
  *  -3, 3  => 0
  */
 function getAverage(value1, value2) {
+    return (value1 + value2)/2
     throw new Error('Not implemented');
 }
 
@@ -75,6 +76,7 @@ function getAverage(value1, value2) {
  *   (-5,0) (10,-10) => 18.027756377319946
  */
 function getDistanceBetweenPoints(x1, y1, x2, y2) {
+    return Math.sqrt(Math.pow((x1 - x2), 2) + Math.pow((y1 - y2), 2))
     throw new Error('Not implemented');
 }
 
@@ -91,13 +93,14 @@ function getDistanceBetweenPoints(x1, y1, x2, y2) {
  *   5*x = 0         => 0
  */
 function getLinearEquationRoot(a, b) {
+    return - b / a;
     throw new Error('Not implemented');
 }
 
 
 /**
  * Returns an angle (in radians) between two vectors given by xi and yi, coordinates in Cartesian plane
- * See details https://en.wikipedia.org/wiki/Euclidean_vector#Representations
+ * See details +
  *
  * @param {number} x1
  * @param {number} y1
@@ -129,6 +132,7 @@ function getAngleBetweenVectors(x1, y1, x2, y2) {
  *     0     => 0
  */
 function getLastDigit(value) {
+    return value % 10;
     throw new Error('Not implemented');
 }
 
@@ -145,6 +149,7 @@ function getLastDigit(value) {
  * '-525.5'     => -525.5
  */
 function parseNumberFromString(value) {
+    return Number(str);
     throw new Error('Not implemented');
 }
 
@@ -162,6 +167,8 @@ function parseNumberFromString(value) {
  *   1,2,3   => 3.741657386773941
  */
 function getParallelipidedDiagonal(a, b, c) {
+    let res = Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2) + Math.pow(c, 2));
+    return res;
     throw new Error('Not implemented');
 }
 
@@ -183,6 +190,8 @@ function getParallelipidedDiagonal(a, b, c) {
  *   1678, 3  => 2000
  */
 function roundToPowerOfTen(num, pow) {
+    let n = Math.pow(10, pow);
+        return Math.round(num / n) * n
     throw new Error('Not implemented');
 }
 
@@ -204,6 +213,19 @@ function roundToPowerOfTen(num, pow) {
  *   17 => true
  */
 function isPrime(n) {
+    if (n === 1) {
+        return false;
+    }
+    else if (n === 2) {
+        return true;
+    } else {
+        for (i = 2; i < n; i++) {
+            if (n % i === 0) {
+                return false;
+            }
+        }
+        return true;
+    }
     throw new Error('Not implemented');
 }
 
@@ -223,6 +245,10 @@ function isPrime(n) {
  *   toNumber(new Number(42), 0) => 42
  */
 function toNumber(value, def) {
+    let num = Number(value);
+    if (num === undefined || isNaN(num)) {
+        return def;
+    } else return num;
     throw new Error('Not implemented');
 }
 
