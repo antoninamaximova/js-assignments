@@ -23,6 +23,7 @@
  *    [0, 1, 2, 3, 4, 5], 5    => 5
  */
 function findElement(arr, value) {
+    return arr.indexOf(value); 
    throw new Error('Not implemented');
 }
 
@@ -38,6 +39,13 @@ function findElement(arr, value) {
  *    5 => [ 1, 3, 5, 7, 9 ]
  */
 function generateOdds(len) {
+    let mas = [];
+    let n = 1;
+    for (i = 0; i < len; i++) {
+        mas.push(n);
+        n += 2;
+    }
+    return mas;
    throw new Error('Not implemented');
 }
 
@@ -54,6 +62,7 @@ function generateOdds(len) {
  *    [] => [] 
  */
 function doubleArray(arr) {
+    return arr.concat(arr);
    throw new Error('Not implemented');
 }
 
@@ -70,6 +79,8 @@ function doubleArray(arr) {
  *    [] => [] 
  */
 function getArrayOfPositives(arr) {
+    let res = arr.filter(m => m > 0);
+    return res;
    throw new Error('Not implemented');
 }
 
@@ -85,6 +96,8 @@ function getArrayOfPositives(arr) {
  *    [ 'cat, 'dog', 'raccon' ] => [ 'cat', 'dog', 'racoon' ]
  */
 function getArrayOfStrings(arr) {
+    let res = arr.filter(m => typeof m === "string");
+    return res;
    throw new Error('Not implemented');
 }
 
@@ -102,6 +115,8 @@ function getArrayOfStrings(arr) {
  *    [ false, 0, NaN, '', undefined ]   => [ ]
  */
 function removeFalsyValues(arr) {
+    let res = arr.filter(Boolean);
+    return res;
    throw new Error('Not implemented');
 }
 
@@ -116,6 +131,8 @@ function removeFalsyValues(arr) {
  *    [ 'a', 'b', 'c', 'd', 'e', 'f', 'g' ]  => [ 'A', 'B', 'C', 'D', 'E', 'F', 'G' ]
  */
 function getUpperCaseStrings(arr) {
+    let up = arr.join(' ').toUpperCase().split(' ');
+    return up;
    throw new Error('Not implemented');
 }
 
@@ -131,6 +148,12 @@ function getUpperCaseStrings(arr) {
  *    [ 'angular', 'react', 'ember' ] => [ 7, 5, 5 ]
  */
 function getStringsLength(arr) {
+    let mas = [];
+    for (i = 0; i < arr.length; i++) {
+        let m = arr[0].length;
+        mas.push(m);
+    }
+    return mas;
    throw new Error('Not implemented');
 }
 
@@ -146,6 +169,7 @@ function getStringsLength(arr) {
  *    [ 1, 'b', 'c'], 0, 'x'  => [ 'x', 1, 'b', 'c' ]
  */
 function insertItem(arr, item, index) {
+     return arr.splice(index, 0, item);
    throw new Error('Not implemented');
 }
 
@@ -160,6 +184,11 @@ function insertItem(arr, item, index) {
  *    [ 'a', 'b', 'c', 'd'], 3  => [ 'a', 'b', 'c' ]
  */
 function getHead(arr, n) {
+    let mas = [];
+    for (i = 0; i < n; i++) {
+        mas.push(arr[i]);
+    }
+    return mas;
    throw new Error('Not implemented');
 }
 
@@ -175,6 +204,11 @@ function getHead(arr, n) {
  *    [ 'a', 'b', 'c', 'd'], 3  => [ 'b', 'c', 'd' ]
  */
 function getTail(arr, n) {
+    let mas = [];
+    for (i = arr.length - n; i < arr.length; i++) {
+        mas.push(arr[i]);
+    }
+    return mas;
    throw new Error('Not implemented');
 }
 
@@ -200,6 +234,10 @@ function getTail(arr, n) {
  *    +'30,31,32,33,34'
  */
 function toCsvText(arr) {
+    let csv = arr.map(function (m) {
+        return m.join(",");
+    }).join("\n");
+    return csv;
    throw new Error('Not implemented');
 }
 
@@ -215,6 +253,8 @@ function toCsvText(arr) {
  *   [ 10, 100, -1 ]      => [ 100, 10000, 1 ]
  */
 function toArrayOfSquares(arr) {
+    arr = arr.map(el => Math.pow(el, 2));
+    return arr;
    throw new Error('Not implemented');
 }
 
@@ -249,6 +289,11 @@ function getMovingSum(arr) {
  * [ "a" ] => []
  */
 function getSecondItems(arr) {
+    let mas = [];
+    for (i = 1; i < arr.length; i + 2) {
+        mas.push(arr[i]);
+    }
+    return mas;
    throw new Error('Not implemented');
 }
 
@@ -268,6 +313,12 @@ function getSecondItems(arr) {
  *  [ 1,2,3,4,5 ] => [ 1, 2,2, 3,3,3, 4,4,4,4, 5,5,5,5,5 ]
  */
 function propagateItemsByPositionIndex(arr) {
+    let mas = [];
+    for (i = 0; i < arr.length; i++) {
+        for (m = 0; m < i+1; m++)
+        mas = mas.concat(arr[i]);
+    }
+    return mas;
    throw new Error('Not implemented');
 }
 
@@ -286,6 +337,11 @@ function propagateItemsByPositionIndex(arr) {
  *   [ 10, 10, 10, 10 ] => [ 10, 10, 10 ]
  */
 function get3TopItems(arr) {
+    let mas = [];
+    arr.sort((a, b) => b - a);
+    for (i = 0; i < 3&&i<arr.length; i++) {
+        mas = mas.concat(arr[i]);
+    }
    throw new Error('Not implemented');
 }
  
